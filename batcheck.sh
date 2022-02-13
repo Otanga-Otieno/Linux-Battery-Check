@@ -4,6 +4,7 @@ do
     globalTime="";
     globalUnit="";
 
+#Set total seconds to full/empty as per unit(hours or minutes)
     getSeconds() {
         t=$1;
         u=$2;
@@ -29,6 +30,7 @@ do
 
     }
 
+#get battery stats from upower commands
     charge=$(upower -i /org/freedesktop/UPower/devices/battery_BAT1| grep -E "percentage");
     empty=$(upower -i /org/freedesktop/UPower/devices/battery_BAT1| grep -E "to\ empty");
     full=$(upower -i /org/freedesktop/UPower/devices/battery_BAT1| grep -E "to\ full");
