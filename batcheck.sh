@@ -38,12 +38,13 @@ do
     level=${charge:15:-1};
     empty=${empty:19};
 
-    if [ -z ${empty+x} ];
+    if [ -z "$empty" ];
     then
         full=${full:19}
         
-        if [ -z ${full+x} ];
+        if [ -z "$full" ];
         then
+            echo "Sleeping for 600 seconds";
             sleep 600;
             continue;
         fi
