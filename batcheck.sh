@@ -38,10 +38,12 @@ do
     level=${charge:15:-1};
     empty=${empty:19};
 
+#check if empty variable is not set
     if [ -z "$empty" ];
     then
         full=${full:19}
         
+        #check if full variable is also not set
         if [ -z "$full" ];
         then
             echo "Sleeping for 600 seconds";
